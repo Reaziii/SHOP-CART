@@ -1,0 +1,51 @@
+.checkout{
+    .checkout-all-items{
+        width: 65%;
+    
+    }
+    .extra{
+        display: flex;
+        justify-content: center;
+    }
+    .extra button{
+        height: 25px;
+        width: 30px;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        line-height: 25px;
+        border : none;
+        outline: none;
+        color: white;
+        background-color: rgb(236, 81, 81);
+    }
+    .extra p{
+        margin: 0px 10px;
+    }
+    .extra{
+        .counter-buttons{
+            margin : auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .remove-button button{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .item-name{
+        color: rgb(109, 109, 109);
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+    .item-all-details{
+        color: rgb(109, 109, 109);
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 4px;
+
+    }
+}

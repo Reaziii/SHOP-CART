@@ -1,0 +1,17 @@
+.checkout{
+    display: flex;
+    justify-content: center;
+    .remove-buttons button{
+        margin-top: 19px;
+        width: 100px;
+        
+    }
+    .test-warning{
+        color: rgb(250, 84, 84);
+        font-weight: bold;
+        letter-spacing: 3px;
+        line-height: 18px;
+        margin-top: 44px;
+        font-size: 12px;
+    }
+}

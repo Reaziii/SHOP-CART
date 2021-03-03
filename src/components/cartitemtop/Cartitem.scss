@@ -1,0 +1,24 @@
+.cartbutton{
+    position: relative;
+    .countercart
+    {
+        height: 25px;
+        width: 25px;
+        background: red;
+        top: 15px;
+        position: absolute;
+        left: 40px;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+    .countercart p{
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        top: -27px;
+        height: 25px;
+        width: 25px;
+        color: white;
+        font-size: 16px;
+    }
+}

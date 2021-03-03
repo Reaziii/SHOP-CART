@@ -1,0 +1,21 @@
+.contact-from{
+    width: 50%;
+    position: absolute;
+    transform: translate(50%,0%);
+
+}
+.contact-from input, .contact-from button,.contact-from textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    margin : 20px;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+.textarea
+{
+    height: 200px;
+}
+.contact{
+
+    position: relative;
+}

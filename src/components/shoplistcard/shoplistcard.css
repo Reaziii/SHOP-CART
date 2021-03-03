@@ -1,0 +1,54 @@
+.full-card{
+    float : left;
+    height : 300px;
+    width : 400px;
+    margin : 20px;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+
+
+}
+.pic-c{
+    transition: 3s;
+}
+.full-card:hover .pic-c{
+    transform: scale(1.2);
+    overflow: hidden;
+}
+.full-card:hover .card-shop-now{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+
+}
+.card-shop-now{
+    background-color: white;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -40%);
+    height: 110px;
+    width: 160px;
+    text-align: center;
+    transition: 0.3s;
+    opacity: 0;
+
+}
+.card-shop-now h2{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0px;
+    color: #9c6218;
+    margin: 0px;
+}
+.card-shop-now h1{
+    margin: 0px;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin: 18px 0px;
+    color: #ff5959;
+    font-weight: bold;
+}

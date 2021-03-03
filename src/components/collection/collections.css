@@ -1,0 +1,19 @@
+.collection{
+    height: 400px;
+    width: 100%;
+    /* justify-content: center; */
+    /* display: flex;
+    text-align: center; */
+    padding : 30px;
+    
+
+}
+.collection h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Gentium Basic', serif;
+    font-size: 30px;
+    letter-spacing: 15px;
+    margin-left: 0px;
+
+}
