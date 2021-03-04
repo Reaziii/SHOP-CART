@@ -12,6 +12,12 @@ import Practice from '../practice/Practice'
 
 
 class Header extends Component {
+    constructor(){
+        super();
+        this.state={
+            loading : true,
+        }
+    }
     fun= async (user)=>{
         await adduser(user);
         if(user){
@@ -21,17 +27,24 @@ class Header extends Component {
                 if(res.data()){
                     const {displayName} = res.data();
                     this.props.set_user(user,displayName)
+                    this.setState({loading : false})
+
                 }
             })
         }
 
 
     }
+
     unscribeFromAuth = null;
     componentDidMount(){
-        this.unscribeFromAuth= auth.onAuthStateChanged((user)=>{
-            this.fun(user);
-        })
+        const a = async ()=>{
+            this.unscribeFromAuth = await auth.onAuthStateChanged((user)=>{
+                this.fun(user);
+            })
+        }
+        a();
+
     }
     componentWillUnmount(){
         this.unscribeFromAuth();
@@ -44,36 +57,39 @@ class Header extends Component {
 
     render() {
     const {history,displayName,user} = this.props;
-        return (
-            <div>
+    if(this.state.loading){
+        return <div></div>
+    }
+    return (
+        <div>
 
-                <nav>
-                    <img onClick={()=>history.push('/')} alt="logo" src={logo}></img>
+            <nav>
+                <img onClick={()=>history.push('/')} alt="logo" src={logo}></img>
 
-                    <ul>
-                        <li className="lii"><Cartitem/></li>
-                      
-                        {
-                            displayName?
-                            <div>
-                            <li onClick={this.signout} className="lii">sign out</li>
-                            <ProfileHeader username={displayName}/>
-                            
-                            </div>
-                            :
-                            <li className="lii" onClick={()=>history.push('/signin')} >sign in</li>
-                        }
+                <ul>
+                    <li className="lii"><Cartitem/></li>
+                    
+                    {
+                        displayName?
+                        <div>
+                        <li onClick={this.signout} className="lii">sign out</li>
+                        <ProfileHeader username={displayName}/>
+                        
+                        </div>
+                        :
+                        <li className="lii" onClick={()=>history.push('/signin')} >sign in</li>
+                    }
 
-                        <li className="lii" onClick={()=>history.push('/contact')}>Contact</li>
-                        <li className="lii" onClick={()=>history.push('/shop')} >Shop</li>
-                        <li className="lii" onClick={()=>history.push('/')}>Home</li>
+                    <li className="lii" onClick={()=>history.push('/contact')}>Contact</li>
+                    <li className="lii" onClick={()=>history.push('/shop')} >Shop</li>
+                    <li className="lii" onClick={()=>history.push('/')}>Home</li>
 
-                    </ul>
-                </nav>                
+                </ul>
+            </nav>                
 
-                </div>
+            </div>
 
-        )
+    )
     }
 }
 
